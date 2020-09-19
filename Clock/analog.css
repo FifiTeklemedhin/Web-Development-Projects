@@ -1,0 +1,59 @@
+body {
+  background-color: black;
+  font-size: 10px;
+  font-family: fantasy, monospace;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.clock {
+  border: 2px solid white;
+  border-radius: 90%;
+  width: 600px;
+  height: 600px;
+  position: relative;
+  transform: translateY(20vh);
+  border-bottom: 50%;
+
+}
+
+.clock .number{
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+}
+
+
+
+.clock .number1{--rotation: 30deg;}
+.clock .number2{--rotation: 60deg;}
+.clock .number3{--rotation: 90deg;}
+.clock .number4{--rotation: 120deg;}
+.clock .number5{--rotation: 150deg;}
+.clock .number6{--rotation: 180deg;}
+.clock .number7{--rotation: 210deg;}
+.clock .number8{--rotation: 240deg;}
+.clock .number9{--rotation: 270deg;}
+.clock .number10{--rotation: 300deg;}
+.clock .number11{--rotation: 330deg;}
+
+.clock .hand {
+  --left: 6px;
+  --radius: 6px;
+  --height: 40%;
+  --rotation: 0;
+  --yVal: 60;
+  position: absolute;
+  border-left: var(--left) solid white;
+  border-radius: var(--radius);
+  height: var(--height);
+  transform: translate(295px, calc(var(--yVal) * 1px)) rotate(calc(var(--rotation) * 1deg));
+}
+.clock .hand.minute {--left: 4px; --radius: 4px; --height: 35%; --yVal: 90; border-color: blue;}
+.clock .hand.second {--left: 2px; --radius: 2px; --height: 30%; --yVal: 120; border-color: red;}
